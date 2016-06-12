@@ -3,38 +3,40 @@ $brand-text-shadow: 0 1px 2px $brand-bg, 0 1px 0 $brand-bg;
 .top-nav {
   position: relative;
 
-  background: $brand-dark;
-  color: $brand-text;
   margin-bottom: 0 $gutter;
   padding: 0 $gutter;
+  border-bottom: $basic-border;
+
+  background: $brand-dark;
+  color: $brand-text;
 
   font-family: $brand-sans;
-  border-bottom: $basic-border;
 }
 
 .top-nav__list {
+  display: flex;
+
   height: 70px;
 
   margin-top: 0;
   margin-bottom: 0;
   padding: 0;
 
-  display: flex;
-
   li {
-    list-style: none;
     display: flex;
-
     align-items: center;
+
+    list-style: none;
   }
 }
 
 .top-nav__brand {
   flex-grow: 1;
 
-  font-weight: 500;
-  font-size: 2rem;
   margin: 0;
+
+  font-size: 2rem;
+  font-weight: 500;
 
   a {
     color: inherit;
@@ -43,9 +45,9 @@ $brand-text-shadow: 0 1px 2px $brand-bg, 0 1px 0 $brand-bg;
 }
 
 .top-nav__link {
-  color: inherit;
-
   padding: 0 20px;
+
+  color: inherit;
 
   font-size: 1.625rem;
   font-weight: 300;
@@ -59,14 +61,14 @@ $brand-text-shadow: 0 1px 2px $brand-bg, 0 1px 0 $brand-bg;
 }
 
 .top-nav__mobile-bar {
-  height: 70px;
   display: none;
   position: relative;
+  height: 70px;
 }
 
 .top-nav__toggle {
-  background: none;
   border: 0;
+  background: none;
   color: inherit;
   font-size: 1.5rem;
 
@@ -78,14 +80,16 @@ $brand-text-shadow: 0 1px 2px $brand-bg, 0 1px 0 $brand-bg;
 }
 
 .top-nav__mobile-brand {
-  margin: 0;
-  padding: 0;
-  font-weight: 700;
-  font-size: 2.5rem;
   position: absolute;
   top: 50%;
   left: 50%;
+  margin: 0;
+  padding: 0;
+
   transform: translate(-50%, -50%);
+
+  font-size: 2.5rem;
+  font-weight: 700;
 
   a {
     position: relative;
@@ -102,21 +106,23 @@ $brand-text-shadow: 0 1px 2px $brand-bg, 0 1px 0 $brand-bg;
   }
 
   .top-nav__list {
-    background: lighten($brand-bg, 10%);
-
     display: block;
-    height: inherit;
-    width: 100%;
 
     position: absolute;
     top: 100%;
     left: 0;
-    z-index: 1;
 
+    width: 100%;
+
+    height: inherit;
     max-height: 0;
-    overflow: auto;
 
     transition: max-height 1s, padding 1s;
+
+    background: lighten($brand-bg, 10%);
+
+    overflow: auto;
+    z-index: 1;
 
     li {
       display: block;
@@ -128,8 +134,8 @@ $brand-text-shadow: 0 1px 2px $brand-bg, 0 1px 0 $brand-bg;
   }
 
   .active .top-nav__list {
+    max-height: 7rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    max-height: 7rem;
   }
 }
