@@ -9,7 +9,6 @@
 
   {{#if session.isAuthenticated}}
   {{else}}
-    <li>{{link-to "signup" "application" class="top-nav__link"}}</li>
-    <li>{{link-to "login" "application" class="top-nav__link"}}</li>
+    <li>{{link-to "login" "login" class="top-nav__link"}}</li>
   {{/if}}
 </ul>
