@@ -2,6 +2,11 @@
 
 module.exports = function(environment) {
   var ENV = {
+    DS: {
+      host: 'http://localhost:4000',
+      namespace: 'api',
+    },
+
     modulePrefix: 'planner',
     environment: environment,
     baseURL: '/',
