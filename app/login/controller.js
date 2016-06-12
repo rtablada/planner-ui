@@ -5,8 +5,10 @@ export default Ember.Controller.extend({
 
   login({email, password}) {
     this.get('session').authenticate('authenticator:planner', email, password)
-      .catch(() => {
-        window.alert('There was an error');
+      .catch(({errors}) => {
+        errors.forEach((e) => {
+          console.log(e);
+        });
       });
   },
 });
