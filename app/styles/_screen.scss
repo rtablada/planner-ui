@@ -1,0 +1,11 @@
+.application {
+  display: flex;
+  flex-direction: column;
+
+  height: 100vh;
+
+  &__outlet {
+    flex: 1;
+    overflow-y: auto;
+  }
+}
