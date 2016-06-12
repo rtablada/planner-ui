@@ -1,0 +1,15 @@
+<div class="top-nav__mobile-bar">
+  <button class="top-nav__toggle" onclick={{action 'toggleMenu'}}>{{fa-icon "bars"}}</button>
+  <h1 class="top-nav__mobile-brand">{{link-to "lesson planner" "index"}}</h1>
+</div>
+<ul class="yg-container top-nav__list">
+  <li class="top-nav__brand">{{link-to "lesson planner" "index"}}</li>
+
+  <li>{{link-to "home" "index" class="top-nav__link"}}</li>
+
+  {{#if session.isAuthenticated}}
+  {{else}}
+    <li>{{link-to "signup" "application" class="top-nav__link"}}</li>
+    <li>{{link-to "login" "application" class="top-nav__link"}}</li>
+  {{/if}}
+</ul>
