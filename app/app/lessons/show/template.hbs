@@ -51,6 +51,23 @@
 
       {{#card.content}}
         {{#paper-list}}
+          {{#paper-item class="md-2-line"}}
+            <div class="md-list-item-text lesson-block">
+              <h3>Estimated Time</h3>
+              <h3>Item</h3>
+            </div>
+          {{/paper-item}}
+          {{paper-divider}}
+          {{#each (sort-by "week" "day" model.blocks) as |block|}}
+            {{#paper-item class="md-2-line"}}
+              <div class="md-list-item-text lesson-block">
+                <h3>{{block.estimatedTime}}</h3>
+                <h3>{{block.title}}</h3>
+              </div>
+            {{/paper-item}}
+            {{paper-divider}}
+          {{/each}}
+
           {{new-block onsubmit=(action addBlock model)}}
         {{/paper-list}}
       {{/card.content}}
