@@ -15,6 +15,7 @@ export default Ember.Controller.extend({
         hours: now.format('hh'),
         minutes: now.format('mm'),
         seconds: now.format('ss'),
+        amPm: now.format('A'),
       });
       yield timeout(1000);
     }

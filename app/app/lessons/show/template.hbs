@@ -39,7 +39,7 @@
         {{#title.text as |text|}}
           {{#text.headline class="lesson-current-time"}}
             <span>Current Time</span>
-            <span>{{liquid-bind hours}}:{{liquid-bind minutes}}:{{liquid-bind seconds}}</span>
+            <span class="timer">{{liquid-bind hours}}:{{liquid-bind minutes}} {{amPm}}</span>
           {{/text.headline}}
         {{/title.text}}
       {{/card.title}}
