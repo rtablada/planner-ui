@@ -12,7 +12,7 @@ Router.map(function() {
   this.route('app', function() {
     this.route('lessons', function() {
       this.route('new');
-      this.route('show');
+      this.route('show', {path: '/:lesson_id'});
     });
   });
 });

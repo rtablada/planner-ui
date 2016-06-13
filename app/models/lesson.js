@@ -4,9 +4,9 @@ import attr from 'ember-data/attr';
 
 export default Model.extend({
   lessons: attr(),
-  week: attr('integer'),
-  day: attr('integer'),
-  date: attr('date'),
+  week: attr('number'),
+  day: attr('number'),
+  date: attr('string'),
   image: attr('string'),
   quote: attr('string')
 });
