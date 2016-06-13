@@ -13,4 +13,16 @@
 
 .liquid-screen {
   flex: 1;
+  overflow-y: auto;
+
+  > .liquid-child {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+}
+
+.all-filler {
+  display: flex;
+  flex: 1;
 }
