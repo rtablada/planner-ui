@@ -58,15 +58,23 @@
             </div>
           {{/paper-item}}
           {{paper-divider}}
-          {{#each (sort-by "week" "day" model.blocks) as |block|}}
-            {{#paper-item class="md-2-line"}}
-              <div class="md-list-item-text lesson-block">
-                <h3>{{block.estimatedTime}}</h3>
-                <h3>{{block.title}}</h3>
-              </div>
-            {{/paper-item}}
-            {{paper-divider}}
-          {{/each}}
+
+          {{#sortable-group onChange=(action reorderBlocks) as |group|}}
+            {{#each (sort-by "order" model.blocks) as |block|}}
+              {{#sortable-item model=block group=group handle=".handle"}}
+                <md-list-item class="md-2-line">
+                  <div class="md-no-style md-list-item-inner md-ink-ripple">
+                    <div class="md-list-item-text lesson-block">
+                      <h3>{{block.estimatedTime}}</h3>
+                      <h3>{{block.title}}</h3>
+                      <span class="handle">&varr;</span>
+                    </div>
+                  </div>
+                </md-list-item>
+                {{paper-divider}}
+              {{/sortable-item}}
+            {{/each}}
+          {{/sortable-group}}
 
           {{new-block onsubmit=(action addBlock model)}}
         {{/paper-list}}

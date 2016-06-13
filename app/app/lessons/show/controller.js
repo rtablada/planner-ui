@@ -24,9 +24,20 @@ export default Ember.Controller.extend({
   addBlock(lesson, resetForm, blockAttrs) {
     const block = this.store.createRecord('block', blockAttrs);
     block.set('lesson', lesson);
+    block.set('order', lesson.get('blocks.length'));
 
     block.save().then(() => {
       resetForm();
     });
   },
+
+  reorderBlocks(blocks) {
+    blocks.forEach((block, order) => {
+      block.set('order', order);
+
+      if (block.get('hasDirtyAttributes')) {
+        block.save();
+      }
+    });
+  }
 });
