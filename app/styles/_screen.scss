@@ -5,7 +5,12 @@
   height: 100vh;
 
   &__outlet {
+    display: flex;
     flex: 1;
     overflow-y: auto;
   }
+}
+
+.liquid-screen {
+  flex: 1;
 }

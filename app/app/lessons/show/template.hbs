@@ -1,0 +1,58 @@
+<div class="layout-row layout-xs-column">
+  <div class="flex-100">
+    {{#link-to "app.lessons.index"}}
+      {{#paper-button raised=true primary=true}}
+        View all lessons
+      {{/paper-button}}
+    {{/link-to}}
+  </div>
+</div>
+
+<div class="layout-row layout-xs-column">
+  <div class="flex-gt-md-25">
+    {{#paper-card as |card|}}
+      {{#card.title as |title|}}
+        {{#title.text as |text|}}
+          {{#text.headline}}
+            Week {{model.week}} - Lesson {{model.day}}
+          {{/text.headline}}
+          {{model.date}}
+        {{/title.text}}
+      {{/card.title}}
+    {{/paper-card}}
+
+    {{#paper-card as |card|}}
+      {{#liquid-unless hideGif}}{{card.image src=model.image}}{{/liquid-unless}}
+      {{#card.title as |title|}}
+        {{#title.text as |text|}}
+          {{#text.headline}}
+            Daily Inspiration
+          {{/text.headline}}
+        {{/title.text}}
+      {{/card.title}}
+
+      {{#card.content}}
+        <blockquote>{{model.quote}}</blockquote>
+      {{/card.content}}
+
+      {{#card.actions}}
+        {{#paper-button onClick=(action toggleProperty "hideGif")}}Hide GIF{{/paper-button}}
+      {{/card.actions}}
+    {{/paper-card}}
+  </div>
+
+  <div class="flex-gt-md-50"></div>
+
+  <div class="flex-gt-md-25">
+    {{#paper-card as |card|}}
+      {{#card.title as |title|}}
+        {{#title.text as |text|}}
+          {{#text.headline class="lesson-current-time"}}
+            <span>Current Time</span>
+            <span class="timer">{{liquid-bind hours}}:{{liquid-bind minutes}} {{amPm}}</span>
+          {{/text.headline}}
+        {{/title.text}}
+      {{/card.title}}
+    {{/paper-card}}
+  </div>
+</div>

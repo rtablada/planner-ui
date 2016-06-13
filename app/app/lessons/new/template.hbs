@@ -1,0 +1,33 @@
+<div class="layout-row layout-xs-column">
+  <div class="flex-gt-xs-25"></div>
+  <div class="layout-column flex-xs flex-gt-xs-50">
+    {{#simple-form onsubmit=(action saveLesson) as |formValues|}}
+      {{#paper-card as |card|}}
+        {{#card.title as |title|}}
+          {{#title.text as |text|}}
+            {{#text.headline}}New Lesson{{/text.headline}}
+          {{/title.text}}
+        {{/card.title}}
+
+        {{#card.content}}
+          <div class="layout-column">
+            {{paper-input label="Week" type="number" value=formValues.week onChange=(action (mut formValues.week))}}
+            {{paper-input label="Day" type="number" value=formValues.day onChange=(action (mut formValues.day))}}
+            {{paper-input label="Date" type="date" value=formValues.date onChange=(action (mut formValues.date))}}
+            {{paper-input label="Image Url" value=formValues.image onChange=(action (mut formValues.image))}}
+            {{paper-input textarea=true passThru=(hash rows=5) label="Quote of the day" value=formValues.quote onChange=(action (mut formValues.quote))}}
+          </div>
+        {{/card.content}}
+
+        {{#card.actions}}
+          {{#link-to "app.lessons"}}
+            {{#paper-button}}Back{{/paper-button}}
+          {{/link-to}}
+
+          {{#paper-button raised=true primary=true type="submit"}}Submit{{/paper-button}}
+        {{/card.actions}}
+      {{/paper-card}}
+    {{/simple-form}}
+  </div>
+  <div class="flex-gt-xs-25"></div>
+</div>
