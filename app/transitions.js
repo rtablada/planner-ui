@@ -3,4 +3,11 @@ export default function(){
     this.childOf('.timer'),
     this.use('crossFade')
   );
+
+  this.transition(
+    this.fromRoute('app.lessons.index'),
+    this.fromRoute('app.lessons.*'),
+    this.use('toLeft'),
+    this.reverse('toRight')
+  );
 };

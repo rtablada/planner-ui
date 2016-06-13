@@ -1,5 +1,33 @@
-{{#link-to "app.lessons.new"}}
-  {{#paper-button raised=true}}
-    New Lesson
-  {{/paper-button}}
-{{/link-to}}
+<div class="layout-row layout-xs-column">
+  <div class="flex-100">
+    {{#link-to "app.lessons.new"}}
+      {{#paper-button raised=true}}
+        New Lesson
+      {{/paper-button}}
+    {{/link-to}}
+  </div>
+</div>
+
+<div class="layout-row layout-xs-column">
+  <div class="flex-gt-md-25">
+  </div>
+  <div class="flex-gt-md-50">
+    {{#paper-content class="md-whiteframe-z1 list-demo"}}
+      {{#paper-list}}
+        {{#each model as |lesson|}}
+          {{#paper-item class="md-3-line"}}
+           <div class="md-list-item-text">
+             <h3>Week {{lesson.week}} - Day {{lesson.day}}</h3>
+             <p>{{lesson.date}}</p>
+           </div>
+
+            {{#link-to "app.lessons.show" lesson class="md-secondary md-button"}}View Lesson{{/link-to}}
+         {{/paper-item}}
+         {{paper-divider}}
+        {{/each}}
+      {{/paper-list}}
+    {{/paper-content}}
+  </div>
+  <div class="flex-gt-md-25">
+  </div>
+</div>

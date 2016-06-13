@@ -1,4 +1,14 @@
 <div class="layout-row layout-xs-column">
+  <div class="flex-100">
+    {{#link-to "app.lessons.index"}}
+      {{#paper-button raised=true primary=true}}
+        View all lessons
+      {{/paper-button}}
+    {{/link-to}}
+  </div>
+</div>
+
+<div class="layout-row layout-xs-column">
   <div class="flex-gt-md-25">
     {{#paper-card as |card|}}
       {{#card.title as |title|}}
