@@ -4,3 +4,17 @@
 @import 'base';
 @import 'screen';
 @import 'components/top-nav';
+
+.lesson-current-time {
+  display: flex;
+  justify-content: space-between;
+
+  .liquid-container {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .liquid-child {
+    padding: 0 0.2rem;
+  }
+}
