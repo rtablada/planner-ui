@@ -1,6 +1,6 @@
 import Model from 'ember-data/model';
 import attr from 'ember-data/attr';
-// import { belongsTo, hasMany } from 'ember-data/relationships';
+import { hasMany } from 'ember-data/relationships';
 
 export default Model.extend({
   lessons: attr(),
@@ -8,5 +8,7 @@ export default Model.extend({
   day: attr('number'),
   date: attr('string'),
   image: attr('string'),
-  quote: attr('string')
+  quote: attr('string'),
+
+  blocks: hasMany('block'),
 });
