@@ -8,5 +8,6 @@ export default Model.extend({
   estimatedTime: attr('number'),
   completed: attr('boolean'),
   timeElapsed: attr('number'),
-  lesson: belongsTo('lesson')
+  order: attr('number'),
+  lesson: belongsTo('lesson'),
 });
