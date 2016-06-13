@@ -6,8 +6,12 @@ export default function(){
 
   this.transition(
     this.fromRoute('app.lessons.index'),
-    this.use('toLeft'),
-    this.reverse('toRight')
+    this.use('toLeft')
+  );
+
+  this.transition(
+    this.toRoute('app.lessons.index'),
+    this.use('toRight')
   );
 
   this.transition(
@@ -18,8 +22,12 @@ export default function(){
 
   this.transition(
     this.fromRoute('index'),
-    this.use('toLeft'),
-    this.reverse('toRight')
+    this.use('toLeft')
+  );
+
+  this.transition(
+    this.toRoute('index'),
+    this.use('toRight')
   );
 
   this.transition(
