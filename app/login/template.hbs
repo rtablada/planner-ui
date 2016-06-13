@@ -1,26 +1,28 @@
-<div class="layout-row layout-xs-column">
-  <div class="flex-gt-xs-25"></div>
-  <div class="layout-column flex-xs flex-gt-xs-50">
-    {{#simple-form onsubmit=(action login) as |formValues|}}
-      {{#paper-card as |card|}}
-        {{#card.title as |title|}}
-          {{#title.text as |text|}}
-            {{#text.headline}}Login{{/text.headline}}
-          {{/title.text}}
-        {{/card.title}}
+<div class="liquid-screen">
+  <div class="layout-row layout-xs-column">
+    <div class="flex-gt-xs-25"></div>
+    <div class="layout-column flex-xs flex-gt-xs-50">
+      {{#simple-form onsubmit=(action login) as |formValues|}}
+        {{#paper-card as |card|}}
+          {{#card.title as |title|}}
+            {{#title.text as |text|}}
+              {{#text.headline}}Login{{/text.headline}}
+            {{/title.text}}
+          {{/card.title}}
 
-        {{#card.content}}
-          <div class="layout-column">
-            {{paper-input label="Email" value=formValues.email onChange=(action (mut formValues.email))}}
-            {{paper-input label="Password" type="password" value=formValues.password onChange=(action (mut formValues.password))}}
-          </div>
-        {{/card.content}}
+          {{#card.content}}
+            <div class="layout-column">
+              {{paper-input label="Email" value=formValues.email onChange=(action (mut formValues.email))}}
+              {{paper-input label="Password" type="password" value=formValues.password onChange=(action (mut formValues.password))}}
+            </div>
+          {{/card.content}}
 
-        {{#card.actions}}
-          {{#paper-button type="submit"}}Login{{/paper-button}}
-        {{/card.actions}}
-      {{/paper-card}}
-    {{/simple-form}}
+          {{#card.actions}}
+            {{#paper-button type="submit"}}Login{{/paper-button}}
+          {{/card.actions}}
+        {{/paper-card}}
+      {{/simple-form}}
+    </div>
+    <div class="flex-gt-xs-25"></div>
   </div>
-  <div class="flex-gt-xs-25"></div>
 </div>

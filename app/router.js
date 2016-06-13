@@ -15,6 +15,10 @@ Router.map(function() {
       this.route('show', {path: '/:lesson_id'});
     });
   });
+
+  this.route('lesson', {
+    path: '/lesson/:lesson_id'
+  });
 });
 
 export default Router;

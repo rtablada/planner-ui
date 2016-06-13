@@ -1,0 +1,33 @@
+<div class="liquid-screen">
+  <div class="layout-row layout-xs-column">
+    <div class="flex-gt-md-25">
+    </div>
+    <div class="flex-gt-md-50">
+      {{#paper-card as |card|}}
+        {{#card.title as |title|}}
+          {{#title.text as |text|}}
+            {{#text.headline}}All Lessons{{/text.headline}}
+          {{/title.text}}
+        {{/card.title}}
+
+        {{#card.content}}
+          {{#paper-list}}
+            {{#each (sort-by "week" "day" model) as |lesson|}}
+              {{#paper-item class="md-3-line"}}
+               <div class="md-list-item-text">
+                 <h3>Week {{lesson.week}} - Day {{lesson.day}}</h3>
+                 <p>{{lesson.date}}</p>
+               </div>
+
+                {{#link-to "lesson" lesson class="md-secondary md-button"}}View Lesson{{/link-to}}
+             {{/paper-item}}
+             {{paper-divider}}
+            {{/each}}
+          {{/paper-list}}
+        {{/card.content}}
+      {{/paper-card}}
+    </div>
+    <div class="flex-gt-md-25">
+    </div>
+  </div>
+</div>
