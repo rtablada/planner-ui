@@ -2,6 +2,10 @@
 
 module.exports = function(environment) {
   var ENV = {
+    'ember-composable-helpers': {
+      only: ['sort-by'],
+    },
+
     DS: {
       host: 'http://localhost:4000',
       namespace: 'api',
