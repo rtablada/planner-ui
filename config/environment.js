@@ -1,4 +1,5 @@
 /* jshint node: true */
+require(`dotenv`).config();
 
 module.exports = function(environment) {
   var ENV = {
@@ -7,7 +8,7 @@ module.exports = function(environment) {
     },
 
     DS: {
-      host: 'http://localhost:4000',
+      host: process.env.API_HOST || 'http://localhost:4000',
       namespace: 'api',
     },
 
