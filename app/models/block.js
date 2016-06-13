@@ -5,8 +5,8 @@ import { belongsTo } from 'ember-data/relationships';
 
 export default Model.extend({
   title: attr('string'),
-  estimatedTime: attr('integer'),
+  estimatedTime: attr('number'),
   completed: attr('boolean'),
-  timeElapsed: attr('integer'),
+  timeElapsed: attr('number'),
   lesson: belongsTo('lesson')
 });

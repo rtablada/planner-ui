@@ -41,7 +41,21 @@
     {{/paper-card}}
   </div>
 
-  <div class="flex-gt-md-50"></div>
+  <div class="flex-gt-md-50">
+    {{#paper-card as |card|}}
+      {{#card.title as |title|}}
+        {{#title.text as |text|}}
+          {{#text.headline}}Lesson Plan{{/text.headline}}
+        {{/title.text}}
+      {{/card.title}}
+
+      {{#card.content}}
+        {{#paper-list}}
+          {{new-block onsubmit=(action addBlock model)}}
+        {{/paper-list}}
+      {{/card.content}}
+    {{/paper-card}}
+  </div>
 
   <div class="flex-gt-md-25">
     {{#paper-card as |card|}}
