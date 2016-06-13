@@ -10,4 +10,10 @@ export default function(){
     this.use('toLeft'),
     this.reverse('toRight')
   );
+
+  this.transition(
+    this.fromRoute('app.lessons.new'),
+    this.fromRoute('app.lessons.show'),
+    this.use('toLeft')
+  );
 }
