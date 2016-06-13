@@ -18,3 +18,20 @@
     text-align: center;
   }
 }
+
+.lesson-block {
+  display: flex;
+  justify-content: space-between;
+}
+
+.handle {
+  cursor: pointer;
+}
+
+md-list-item.md-2-line .md-list-item-text {
+  margin: 0;
+
+  h3, p {
+    padding: 1.5rem 0;
+  }
+}

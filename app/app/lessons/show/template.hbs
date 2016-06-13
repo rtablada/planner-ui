@@ -41,7 +41,47 @@
     {{/paper-card}}
   </div>
 
-  <div class="flex-gt-md-50"></div>
+  <div class="flex-gt-md-50">
+    {{#paper-card as |card|}}
+      {{#card.title as |title|}}
+        {{#title.text as |text|}}
+          {{#text.headline}}Lesson Plan{{/text.headline}}
+        {{/title.text}}
+      {{/card.title}}
+
+      {{#card.content}}
+        {{#paper-list}}
+          {{#paper-item class="md-2-line"}}
+            <div class="md-list-item-text lesson-block">
+              <h3>Estimated Time</h3>
+              <h3>Item</h3>
+              <h3>Order</h3>
+            </div>
+          {{/paper-item}}
+          {{paper-divider}}
+
+          {{#sortable-group onChange=(action reorderBlocks) as |group|}}
+            {{#each (sort-by "order" model.blocks) as |block|}}
+              {{#sortable-item model=block group=group handle=".handle"}}
+                <md-list-item class="md-2-line">
+                  <div class="md-no-style md-list-item-inner md-ink-ripple">
+                    <div class="md-list-item-text lesson-block">
+                      <h3>{{block.estimatedTime}}</h3>
+                      <h3>{{block.title}}</h3>
+                      <p class="handle">&varr;</p>
+                    </div>
+                  </div>
+                </md-list-item>
+                {{paper-divider}}
+              {{/sortable-item}}
+            {{/each}}
+          {{/sortable-group}}
+
+          {{new-block onsubmit=(action addBlock model)}}
+        {{/paper-list}}
+      {{/card.content}}
+    {{/paper-card}}
+  </div>
 
   <div class="flex-gt-md-25">
     {{#paper-card as |card|}}

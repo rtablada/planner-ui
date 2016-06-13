@@ -1,0 +1,16 @@
+<md-list-item class="sm-2-line new-block">
+  <div class="md-no-style md-list-item-inner md-ink-ripple">
+      {{#if adding}}
+        {{#simple-form onsubmit=(action onsubmit (action toggleProperty "adding")) class="layout-row flex-100" as |formValues|}}
+          {{paper-input flex=20 label="Est" value=formValues.estimatedTime onChange=(action (mut formValues.estimatedTime))}}
+          {{paper-input flex=60 label="Title" value=formValues.title onChange=(action (mut formValues.title))}}
+
+          {{#paper-button type="submit" class="flex-20"}}Add{{/paper-button}}
+        {{/simple-form}}
+      {{else}}
+        <div class="layout-row flex-100">
+          {{#paper-button class="flex-100" onClick=(action toggleProperty "adding")}}Add New Lesson Block{{/paper-button}}
+        </div>
+      {{/if}}
+  </div>
+</md-list-item>
