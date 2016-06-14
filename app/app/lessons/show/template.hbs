@@ -1,4 +1,4 @@
-<div class="layout-row layout-xs-column">
+<div class="layout-row">
   <div class="flex-100">
     {{#link-to "app.lessons.index"}}
       {{#paper-button raised=true primary=true}}
@@ -8,8 +8,8 @@
   </div>
 </div>
 
-<div class="layout-row layout-xs-column">
-  <div class="flex-gt-md-25">
+<div class="layout-row">
+  <div class="flex-25">
     {{#paper-card as |card|}}
       {{#card.title as |title|}}
         {{#title.text as |text|}}
@@ -41,7 +41,7 @@
     {{/paper-card}}
   </div>
 
-  <div class="flex-gt-md-50">
+  <div class="flex-50">
     {{#paper-card as |card|}}
       {{#card.title as |title|}}
         {{#title.text as |text|}}
@@ -68,7 +68,10 @@
                     <div class="md-list-item-text lesson-block">
                       <h3>{{block.estimatedTime}}</h3>
                       <h3>{{block.title}}</h3>
-                      <p class="handle">&varr;</p>
+                      <p>
+                        {{#link-to "app.lessons.show.edit-block" block}}<span class="fa fa-fw fa-edit"></span>{{/link-to}}
+                        <span class="handle"><span class="fa fa-fw fa-bars"></span></span>
+                      </p>
                     </div>
                   </div>
                 </md-list-item>
@@ -83,7 +86,7 @@
     {{/paper-card}}
   </div>
 
-  <div class="flex-gt-md-25">
+  <div class="flex-25">
     {{#paper-card as |card|}}
       {{#card.title as |title|}}
         {{#title.text as |text|}}
@@ -96,3 +99,5 @@
     {{/paper-card}}
   </div>
 </div>
+
+{{outlet}}

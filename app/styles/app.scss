@@ -35,3 +35,42 @@ md-list-item.md-2-line .md-list-item-text {
     padding: 1.5rem 0;
   }
 }
+
+.modal-overlay {
+  display: flex;
+  position: fixed;
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.2);
+
+  &__center {
+    display: flex;
+    flex: 1;
+
+    justify-content: center;
+  }
+}
+
+.card-actions--spread {
+  display: flex;
+
+  justify-content: space-between;
+}
+
+
+.modal-card-title {
+  position: relative;
+
+  &__escape {
+    position: absolute;
+    top: 1rem;
+    right: 0;
+  }
+}
