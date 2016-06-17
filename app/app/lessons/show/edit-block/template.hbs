@@ -1,0 +1,40 @@
+<div class="modal-overlay">
+  <div class="modal-overlay__center">
+    <div class="flex-75">
+    {{#paper-card as |card|}}
+      {{#simple-form startingValues=model onsubmit=(action saveBlock model) as |formValues|}}
+        {{#card.title class="modal-card-title" as |title|}}
+          {{#title.text as |text|}}
+            {{#text.headline}}
+              Editing {{model.title}}
+            {{/text.headline}}
+          {{/title.text}}
+
+          {{#link-to "app.lessons.show" class="modal-card-title__escape"}}
+            {{#paper-button}}
+              <span class="fa fa-times"></span>
+            {{/paper-button}}
+          {{/link-to}}
+        {{/card.title}}
+
+        {{#card.content}}
+          <div class="layout-column">
+            {{paper-input label="Est" value=formValues.estimatedTime onChange=(action (mut formValues.estimatedTime))}}
+            {{paper-input label="Title" value=formValues.title onChange=(action (mut formValues.title))}}
+          </div>
+        {{/card.content}}
+
+        {{#card.actions class="card-actions--spread"}}
+          {{#paper-button raised=true warn=true onClick=(action deleteBlock model)}}
+            Delete Block
+          {{/paper-button}}
+
+          {{#paper-button raised=true primary=true type="submit"}}
+            Save
+          {{/paper-button}}
+        {{/card.actions}}
+      {{/simple-form}}
+    {{/paper-card}}
+    </div>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 <div class="layout-row">
   <div class="flex-100">
-    {{#link-to "app.lessons.index"}}
+    {{#link-to "index"}}
       {{#paper-button raised=true primary=true}}
         View all lessons
       {{/paper-button}}
@@ -53,34 +53,23 @@
         {{#paper-list}}
           {{#paper-item class="md-2-line"}}
             <div class="md-list-item-text lesson-block">
-              <h3>Estimated Time</h3>
-              <h3>Item</h3>
-              <h3>Order</h3>
+              <h3 class="flex-20">Estimated Time</h3>
+              <h3 class="flex-80">Item</h3>
             </div>
           {{/paper-item}}
           {{paper-divider}}
 
-          {{#sortable-group onChange=(action reorderBlocks) as |group|}}
-            {{#each (sort-by "order" model.blocks) as |block|}}
-              {{#sortable-item model=block group=group handle=".handle"}}
-                <md-list-item class="md-2-line">
-                  <div class="md-no-style md-list-item-inner md-ink-ripple">
-                    <div class="md-list-item-text lesson-block">
-                      <h3>{{block.estimatedTime}}</h3>
-                      <h3>{{block.title}}</h3>
-                      <p>
-                        {{#link-to "app.lessons.show.edit-block" block}}<span class="fa fa-fw fa-edit"></span>{{/link-to}}
-                        <span class="handle"><span class="fa fa-fw fa-bars"></span></span>
-                      </p>
-                    </div>
-                  </div>
-                </md-list-item>
-                {{paper-divider}}
-              {{/sortable-item}}
-            {{/each}}
-          {{/sortable-group}}
-
-          {{new-block onsubmit=(action addBlock model)}}
+          {{#each (sort-by "order" model.blocks) as |block|}}
+            <md-list-item class="md-2-line">
+              <div class="md-no-style md-list-item-inner md-ink-ripple">
+                <div class="md-list-item-text lesson-block">
+                  <h3 class="flex-20">{{block.estimatedTime}}</h3>
+                  <h3 class="flex-80">{{block.title}}</h3>
+                </div>
+              </div>
+            </md-list-item>
+            {{paper-divider}}
+          {{/each}}
         {{/paper-list}}
       {{/card.content}}
     {{/paper-card}}
@@ -99,5 +88,3 @@
     {{/paper-card}}
   </div>
 </div>
-
-{{outlet}}

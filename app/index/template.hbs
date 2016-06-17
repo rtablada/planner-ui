@@ -1,14 +1,4 @@
 <div class="layout-row">
-  <div class="flex-100">
-    {{#link-to "app.lessons.new"}}
-      {{#paper-button raised=true}}
-        New Lesson
-      {{/paper-button}}
-    {{/link-to}}
-  </div>
-</div>
-
-<div class="layout-row">
   <div class="flex-25">
   </div>
   <div class="flex-50">
@@ -28,7 +18,7 @@
                <p>{{lesson.date}}</p>
              </div>
 
-              {{#link-to "app.lessons.show" lesson class="md-secondary md-button"}}View Lesson{{/link-to}}
+              {{#link-to "lesson" lesson class="md-secondary md-button"}}View Lesson{{/link-to}}
            {{/paper-item}}
            {{paper-divider}}
           {{/each}}
